@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import heroImage from '../../assets/hero.png'
 
@@ -77,6 +77,11 @@ function Gallery() {
   const folder = searchParams.get('folder') || 'l1'
   const [selectedImageIndex, setSelectedImageIndex] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  // Scroll to top when component mounts or folder changes
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [folder])
 
   // Define image collections for each folder
   const imageCollections = {

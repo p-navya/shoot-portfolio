@@ -21,10 +21,6 @@ function Home() {
 
   const handleTileClick = (folder) => {
     navigate(`/gallery?folder=${folder}`)
-    // Scroll to top when navigating to gallery
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }, 100)
   }
 
   return (
@@ -34,28 +30,36 @@ function Home() {
       style={{ backgroundImage: `url(${heroImage})` }}
     >
       <div className="text-center">
-        <h1 className="text-8xl md:text-12xl font-bold text-white text-center font-serif mb-8 ">
+        <h1 className="text-5xl sm:text-7xl md:text-12xl font-bold text-white text-center font-serif mb-8 ">
           Navya Dhriti
         </h1>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white text-lg font-semibold">
           {/* Instagram */}
-          <div className="flex items-center gap-2">
+          <a 
+            href="https://www.instagram.com/navya.dhritii/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-gray-300 transition-colors cursor-pointer"
+          >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
-            <span>navya.dhriti</span>
-          </div>
+            <span>navya.dhritii</span>
+          </a>
           
           <span className="hidden sm:block">|</span>
           
           {/* Gmail */}
-          <div className="flex items-center gap-2">
+          <a 
+            href="mailto:navyadhritiiii@gmail.com" 
+            className="flex items-center gap-2 hover:text-gray-300 transition-colors cursor-pointer"
+          >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.01L12 13l8-6.99V6H4zm0 12h16V8l-8 6L4 8v10z"/>
             </svg>
-            <span>navyadhritii@gmail.com</span>
-          </div>
+            <span>navyadhritiiii@gmail.com</span>
+          </a>
           
           <span className="hidden sm:block">|</span>
           
@@ -101,102 +105,98 @@ function Home() {
         <div className="flex items-center justify-center gap-4 mb-8">
           <div className="h-1 w-36 sm:w-64 md:w-96 bg-gradient-to-l from-white/60 to-transparent" />
           <h2 className="text-4xl md:text-6xl font-bold text-white text-center font-serif">
-            Portfolio
-          </h2>
+          Portfolio
+        </h2>
           <div className="h-1 w-32 sm:w-64 md:w-96 bg-gradient-to-r from-white/60 to-transparent" />
         </div>
         
         {/* Tiles Grid */}
-        <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-4">
-          <div 
-            onClick={() => handleTileClick('l1')}
-            className="w-full max-w-xs mx-auto md:w-56 h-80 md:h-[32rem] bg-white/10 backdrop-blur-md rounded-3xl shadow-lg hover:bg-white/20 transition-all duration-300 overflow-hidden mt-8 md:mt-0 cursor-pointer group relative"
-          >
+        <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-8">
+          <div className="flex flex-col items-center gap-4">
+            <div 
+              className="w-full max-w-xs mx-auto md:w-56 h-80 md:h-[32rem] bg-white/10 backdrop-blur-md rounded-3xl shadow-lg hover:bg-white/20 transition-all duration-300 overflow-hidden mt-8 md:mt-0 cursor-pointer group relative"
+            >
+                <img 
+                  src={T1Image} 
+                  alt="Portfolio Image 1" 
+                  className="w-full h-full object-cover object-[center_25%] rounded-3xl group-hover:scale-105 transition-transform duration-300"
+                />
+            </div>
+            <button 
+              onClick={() => handleTileClick('l1')}
+              className="bg-white/10 backdrop-blur text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white/20 transition-colors"
+            >
+              View the Collection
+            </button>
+          </div>
+          <div className="flex flex-col items-center gap-4">
+            <div 
+              className="w-full max-w-xs mx-auto md:w-56 h-80 md:h-[32rem] bg-white/10 backdrop-blur-md rounded-3xl shadow-lg hover:bg-white/20 transition-all duration-300 overflow-hidden cursor-pointer group relative"
+            >
               <img 
-                src={T1Image} 
-                alt="Portfolio Image 1" 
+                src={T2Image} 
+                alt="Portfolio Image 2" 
                 className="w-full h-full object-cover object-[center_25%] rounded-3xl group-hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className="bg-white/20 backdrop-blur text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-                  Explore Collection
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </div>
-              </div>
-          </div>
-          <div 
-            onClick={() => handleTileClick('l2')}
-            className="w-full max-w-xs mx-auto md:w-56 h-80 md:h-[32rem] bg-white/10 backdrop-blur-md rounded-3xl shadow-lg hover:bg-white/20 transition-all duration-300 overflow-hidden cursor-pointer group relative"
-          >
-            <img 
-              src={T2Image} 
-              alt="Portfolio Image 2" 
-              className="w-full h-full object-cover object-[center_25%] rounded-3xl group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <div className="bg-white/20 backdrop-blur text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-                Explore Collection
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-              </div>
             </div>
+            <button 
+              onClick={() => handleTileClick('l2')}
+              className="bg-white/10 backdrop-blur text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white/20 transition-colors"
+            >
+              View the Collection
+            </button>
           </div>
-          <div 
-            onClick={() => handleTileClick('l3')}
-            className="w-full max-w-xs mx-auto md:w-56 h-80 md:h-[32rem] bg-white/10 backdrop-blur-md rounded-3xl shadow-lg hover:bg-white/20 transition-all duration-300 overflow-hidden cursor-pointer group relative"
-          >
-            <img 
-              src={T3Image} 
-              alt="Portfolio Image 3" 
-              className="w-full h-full object-cover object-[center_25%] rounded-3xl group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <div className="bg-white/20 backdrop-blur text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-                Explore Collection
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-              </div>
+          <div className="flex flex-col items-center gap-4">
+            <div 
+              className="w-full max-w-xs mx-auto md:w-56 h-80 md:h-[32rem] bg-white/10 backdrop-blur-md rounded-3xl shadow-lg hover:bg-white/20 transition-all duration-300 overflow-hidden cursor-pointer group relative"
+            >
+              <img 
+                src={T3Image} 
+                alt="Portfolio Image 3" 
+                className="w-full h-full object-cover object-[center_25%] rounded-3xl group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
+            <button 
+              onClick={() => handleTileClick('l3')}
+              className="bg-white/10 backdrop-blur text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white/20 transition-colors"
+            >
+              View the Collection
+            </button>
           </div>
-          <div 
-            onClick={() => handleTileClick('l4')}
-            className="w-full max-w-xs mx-auto md:w-56 h-80 md:h-[32rem] bg-white/10 backdrop-blur-md rounded-3xl shadow-lg hover:bg-white/20 transition-all duration-300 overflow-hidden cursor-pointer group relative"
-          >
-            <img 
-              src={T4Image} 
-              alt="Portfolio Image 4" 
-              className="w-full h-full object-cover object-[center_25%] rounded-3xl group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <div className="bg-white/20 backdrop-blur text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-                Explore Collection
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-              </div>
+          <div className="flex flex-col items-center gap-4">
+            <div 
+              className="w-full max-w-xs mx-auto md:w-56 h-80 md:h-[32rem] bg-white/10 backdrop-blur-md rounded-3xl shadow-lg hover:bg-white/20 transition-all duration-300 overflow-hidden cursor-pointer group relative"
+            >
+              <img 
+                src={T4Image} 
+                alt="Portfolio Image 4" 
+                className="w-full h-full object-cover object-[center_25%] rounded-3xl group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
+            <button 
+              onClick={() => handleTileClick('l4')}
+              className="bg-white/10 backdrop-blur text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white/20 transition-colors"
+            >
+              View the Collection
+            </button>
           </div>
-          <div 
-            onClick={() => handleTileClick('l5')}
-            className="w-full max-w-xs mx-auto md:w-56 h-80 md:h-[32rem] bg-white/10 backdrop-blur-md rounded-3xl shadow-lg hover:bg-white/20 transition-all duration-300 overflow-hidden cursor-pointer group relative"
-          >
-            <img 
-              src={T5Image} 
-              alt="Portfolio Image 5" 
-              className="w-full h-full object-cover object-[center_25%] rounded-3xl group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <div className="bg-white/20 backdrop-blur text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-                Explore Collection
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-              </div>
+          
+          <div className="flex flex-col items-center gap-4">
+            <div 
+              className="w-full max-w-xs mx-auto md:w-56 h-80 md:h-[32rem] bg-white/10 backdrop-blur-md rounded-3xl shadow-lg hover:bg-white/20 transition-all duration-300 overflow-hidden cursor-pointer group relative"
+            >
+              <img 
+                src={T5Image} 
+                alt="Portfolio Image 5" 
+                className="w-full h-full object-cover object-[center_25%] rounded-3xl group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
+            <button 
+              onClick={() => handleTileClick('l5')}
+              className="bg-white/10 backdrop-blur text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white/20 transition-colors"
+            >
+              View the Collection
+            </button>
           </div>
         </div>
       </div>
